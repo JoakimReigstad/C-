@@ -1,0 +1,58 @@
+namespace Dager
+{
+    using System;
+
+    class Program
+    {
+        static void Main()
+        {
+            while (true)
+            {
+                Console.WriteLine("Write a number between 1-7:");
+
+                string input = Console.ReadLine();
+                int dayNumber;
+
+                if (int.TryParse(input, out dayNumber) && dayNumber >= 1 && dayNumber <= 7)
+                {
+                    string dayName;
+
+                    switch (dayNumber)
+                    {
+                        case 1:
+                            dayName = "Monday";
+                            break;
+                        case 2:
+                            dayName = "Tuesday";
+                            break;
+                        case 3:
+                            dayName = "Wednesday";
+                            break;
+                        case 4:
+                            dayName = "Thursday";
+                            break;
+                        case 5:
+                            dayName = "Friday";
+                            break;
+                        case 6:
+                            dayName = "Saturday";
+                            break;
+                        case 7:
+                            dayName = "Sunday";
+                            break;
+                        default:
+                            dayName = "Invalid day"; // Dette vil aldri nås på grunn av if-sjekken
+                            break;
+                    }
+
+                    Console.WriteLine(dayName);
+                    break; // Avslutter while-løkken hvis vi har fått en gyldig input
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Try again.");
+                }
+            }
+        }
+    }
+}
